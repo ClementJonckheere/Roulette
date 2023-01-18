@@ -17,8 +17,6 @@ public class Roulette {
     {"31","noir"},{"32","rouge"},{"33","noir"},{"34","rouge"},
     {"35","noir"},{"36","rouge"}
     }; 
-    public static int mise = sc.nextInt();
-
     public static String valeurColor = roulette[1][1];
     public static void main(String[] args) throws Exception {
         welcome();
@@ -49,11 +47,11 @@ public class Roulette {
 
     public static void mise() {
         System.out.print("Combiens voulez vous miser ? (votre solde actuelle est de :"+ solde + "\n");
-
-        System.out.print("Vous avez décider de miser " + mise + "\n");
     }
 
     public static void game() {
+        int mise = sc.nextInt();
+        System.out.print("Vous avez décider de miser " + mise + "\n");
         System.out.print("  - Pour commencer taper 1 \n");
         System.out.print("  - Pour annuler taper 2 \n");
         int start = sc.nextInt();
@@ -77,9 +75,9 @@ public class Roulette {
                     int colors = randColor.nextInt(roulette.length);
                     System.out.print(roulette[colors][1]);
                     if(couleur == colors) {
+                        System.out.print("\n Bien joué \n");
                         int total1 = mise * 2;
                         solde = solde + total1;
-                        System.out.print("Bien joué \n");
                         System.out.print("Vous veneez d'empocher" + total1 + "\n");
                         System.out.print("Votre solde est maintenant de" + solde + "\n");
                     }else{
